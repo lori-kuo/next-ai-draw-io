@@ -424,7 +424,7 @@ function validateProviderCredentials(provider: ProviderName): void {
     if (requiredVar && !process.env[requiredVar]) {
         throw new Error(
             `${requiredVar} environment variable is required for ${provider} provider. ` +
-                `Please set it in your .env.local file.`,
+                `Please set it in your env.local file.`,
         )
     }
 
@@ -435,7 +435,7 @@ function validateProviderCredentials(provider: ProviderName): void {
         if (!hasBaseUrl && !hasResourceName) {
             throw new Error(
                 `Azure requires either AZURE_BASE_URL or AZURE_RESOURCE_NAME to be set. ` +
-                    `Please set one in your .env.local file.`,
+                    `Please set one in your env.local file.`,
             )
         }
     }
@@ -484,7 +484,7 @@ export function getAIModel(overrides?: ClientOverrides): ModelConfig {
     const isClientOverride = !!(overrides?.provider && overrides?.apiKey)
 
     // Use client override if provided, otherwise fall back to env vars
-    const modelId = overrides?.modelId || process.env.AI_MODEL
+    const modelId = "deepseek-v3.1-terminus" //overrides?.modelId || process.env.AI_MODEL
 
     if (!modelId) {
         if (isClientOverride) {
@@ -526,7 +526,7 @@ export function getAIModel(overrides?: ClientOverrides): ModelConfig {
 
             if (configured.length === 0) {
                 throw new Error(
-                    `No AI provider configured. Please set one of the following API keys in your .env.local file:\n` +
+                    `No AI provider configured. Please set one of the following API keys in your env.local file:\n` +
                         `- AI_GATEWAY_API_KEY for Vercel AI Gateway\n` +
                         `- DEEPSEEK_API_KEY for DeepSeek\n` +
                         `- OPENAI_API_KEY for OpenAI\n` +
@@ -600,8 +600,11 @@ export function getAIModel(overrides?: ClientOverrides): ModelConfig {
         }
 
         case "openai": {
-            const apiKey = overrides?.apiKey || process.env.OPENAI_API_KEY
-            const baseURL = overrides?.baseUrl || process.env.OPENAI_BASE_URL
+            const apiKey =
+                overrides?.apiKey ||
+                process.env.VENUS_API_KEY ||
+                process.env.OPENAI_API_KEY
+            const baseURL = "http://v2.open.venus.oa.com/llmproxy" //overrides?.baseUrl || process.env.OPENAI_BASE_URL
             if (baseURL) {
                 // Custom base URL = third-party proxy, use Chat Completions API
                 // for compatibility (most proxies don't support /responses endpoint)

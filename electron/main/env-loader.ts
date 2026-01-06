@@ -13,7 +13,7 @@ export function loadEnvFile(): void {
         // User data directory (persists across updates)
         path.join(app.getPath("userData"), ".env"),
         // Development: project root
-        path.join(app.getAppPath(), ".env.local"),
+        path.join(app.getAppPath(), "env.local"),
         path.join(app.getAppPath(), ".env"),
     ]
 

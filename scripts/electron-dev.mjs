@@ -53,7 +53,7 @@ function loadPresetConfig() {
     const configPath = path.join(getUserDataPath(), "config-presets.json")
 
     if (!existsSync(configPath)) {
-        console.log("📋 No preset configuration found, using .env.local")
+        console.log("📋 No preset configuration found, using env.local")
         return null
     }
 
@@ -62,13 +62,13 @@ function loadPresetConfig() {
         const data = JSON.parse(content)
 
         if (!data.currentPresetId) {
-            console.log("📋 No active preset, using .env.local")
+            console.log("📋 No active preset, using env.local")
             return null
         }
 
         const preset = data.presets.find((p) => p.id === data.currentPresetId)
         if (!preset) {
-            console.log("📋 Active preset not found, using .env.local")
+            console.log("📋 Active preset not found, using env.local")
             return null
         }
 
