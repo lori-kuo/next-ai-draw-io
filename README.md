@@ -36,7 +36,7 @@ https://github.com/user-attachments/assets/9d60a3e8-4a1c-4b5e-acbb-26af2d3eabd1
   - [Getting Started](#getting-started)
     - [Try it Online](#try-it-online)
     - [Desktop Application](#desktop-application)
-    - [Run with Docker](#run-with-docker)
+
     - [Installation](#installation)
   - [Deployment](#deployment)
     - [Deploy to EdgeOne Pages](#deploy-to-edgeone-pages)
@@ -146,9 +146,7 @@ Download the native desktop app for your platform from the [Releases page](https
 
 Supported platforms: Windows, macOS, Linux.
 
-### Run with Docker
 
-[Go to Docker Guide](./docs/en/docker.md)
 
 ### Installation
 

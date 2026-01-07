@@ -33,7 +33,7 @@ https://github.com/user-attachments/assets/b2eef5f3-b335-4e71-a755-dc2e80931979
   - [快速开始](#快速开始)
     - [在线试用](#在线试用)
     - [桌面应用](#桌面应用)
-    - [使用Docker运行](#使用docker运行)
+
     - [安装](#安装)
   - [部署](#部署)
     - [部署到腾讯云EdgeOne Pages](#部署到腾讯云edgeone-pages)
@@ -141,9 +141,7 @@ claude mcp add drawio -- npx @next-ai-drawio/mcp-server@latest
 
 支持的平台：Windows、macOS、Linux。
 
-### 使用Docker运行
 
-[查看 Docker 指南](./docker.md)
 
 ### 安装
 

@@ -168,13 +168,7 @@ For security-sensitive environments that require private deployment of draw.io:
 }
 ```
 
-You can deploy your own draw.io instance using the official Docker image:
 
-```bash
-docker run -d -p 8080:8080 jgraph/drawio
-```
-
-Then set `DRAWIO_BASE_URL=http://localhost:8080` (or your server's URL).
 
 ## Troubleshooting
 
